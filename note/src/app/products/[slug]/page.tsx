@@ -3,6 +3,14 @@ type Props ={
         slug: string;
     };
 }
+
 export default function PantsPage({params}: Props){
     return <h1>{params.slug} 제품 설명 페이지!</h1>;
+}
+// 페이지 미리 만들어 두기
+export function generateStaticParams(){
+    const products =['pants', 'skirt'];
+    return products.map(product => ({
+        slug : product,
+    }));
 }
